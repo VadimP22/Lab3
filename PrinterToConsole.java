@@ -1,14 +1,32 @@
 
 public class PrinterToConsole implements MessageManager {
-
+	
+	private PrintMode printMode;
+	
+	public PrinterToConsole(PrintMode printMode) {
+		this.printMode = printMode;
+	}
+	
+	public PrinterToConsole() {
+		this.printMode = PrintMode.PRINTLN;
+	}
+	
 	@Override
 	public void print(String str) {
-		System.out.println(str);
+		if (printMode == PrintMode.PRINTLN) {
+			System.out.println(str);
+		} else {
+			System.out.print(str);
+		}
 		
 	}
 	
 	public void print(int i) {
-		System.out.println(i);
+		if (printMode == PrintMode.PRINTLN) {
+			System.out.println(i);
+		} else {
+			System.out.print(i);
+		}
 	}
 
 	@Override
