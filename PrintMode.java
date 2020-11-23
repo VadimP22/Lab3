@@ -1,4 +1,4 @@
-
 public enum PrintMode {
-	PRINT, PRINTLN
+    PRINT,
+    PRINTLN
 }
