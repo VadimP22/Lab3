@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Floor implements  Storage {
 
     Item items[];
@@ -54,4 +57,27 @@ public class Floor implements  Storage {
         return items;
     }
 
+    @Override
+    public String toString() {
+        return "Floor{" +
+                "items=" + Arrays.toString(items) +
+                ", itemsCount=" + itemsCount +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Floor floor = (Floor) o;
+        return itemsCount == floor.itemsCount &&
+                Arrays.equals(items, floor.items);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(itemsCount);
+        result = 31 * result + Arrays.hashCode(items);
+        return result;
+    }
 }

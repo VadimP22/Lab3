@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public abstract class Human {
 
     protected MessagePrinter messagePrinter;
@@ -6,8 +8,27 @@ public abstract class Human {
         this.messagePrinter = messagePrinter;
     }
 
+    @Override
+    public String toString() {
+        return "Human{" +
+                "messagePrinter=" + messagePrinter +
+                '}';
+    }
 
-    public abstract void eat(FoodSource foodSource,Storage storage);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return Objects.equals(messagePrinter, human.messagePrinter);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(messagePrinter);
+    }
+
+    public abstract void eat(FoodSource foodSource, Storage storage);
 
     public abstract void cleanUp(Storage storage);
 

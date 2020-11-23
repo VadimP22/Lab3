@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class PrinterToConsole implements MessagePrinter {
 
     PrintMode printMode;
@@ -8,6 +10,26 @@ public class PrinterToConsole implements MessagePrinter {
 
     public PrinterToConsole(PrintMode printMode) {
         this.printMode = printMode;
+    }
+
+    @Override
+    public String toString() {
+        return "PrinterToConsole{" +
+                "printMode=" + printMode +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PrinterToConsole that = (PrinterToConsole) o;
+        return printMode == that.printMode;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(printMode);
     }
 
     @Override

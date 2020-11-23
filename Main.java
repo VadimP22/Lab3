@@ -7,7 +7,8 @@ public class Main {
         Storage floor = new Floor();
         House sprutsHouse = new SprutsHouse(printerToConsole, spruts, floor, cupboard);
 
-        
+        sprutsHouse.passDay();
+
     }
 }
 
