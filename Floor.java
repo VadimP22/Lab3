@@ -39,7 +39,12 @@ public class Floor implements  Storage {
 
     @Override
     public String getStatus() {
-        String string = "there are a lot of garbage:" + "\nhello";
+        String string = "there are a lot of garbage:\n";
+
+        for(int i = 0; i < itemsCount; i++) {
+            string = string + items[i].getName() + '\n';
+        }
+
         return string;
     }
 
