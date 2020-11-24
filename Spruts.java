@@ -1,3 +1,5 @@
+package prog.lab3;
+
 public class Spruts extends Human {
 
     private static boolean isExists = false;

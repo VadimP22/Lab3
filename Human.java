@@ -1,3 +1,4 @@
+package prog.lab3;
 import java.util.Objects;
 
 public abstract class Human {

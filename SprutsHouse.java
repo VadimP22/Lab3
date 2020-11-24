@@ -1,3 +1,5 @@
+package prog.lab3;
+
 public class SprutsHouse extends House {
 
     private static boolean isExist = false;

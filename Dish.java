@@ -1,3 +1,4 @@
+package prog.lab3;
 import java.util.Objects;
 
 public class Dish implements Item {

@@ -1,4 +1,6 @@
+package prog.lab3;
 import java.util.Arrays;
+
 
 public class Cupboard implements  FoodSource {
 
